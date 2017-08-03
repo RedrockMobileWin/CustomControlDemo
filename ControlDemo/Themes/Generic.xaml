@@ -1,0 +1,32 @@
+<ResourceDictionary
+    xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+    xmlns:local="using:ControlDemo">
+
+    <Style TargetType="local:CircularProgressBar" >
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="local:CircularProgressBar">
+                    <!--<Border
+                        Background="{TemplateBinding Background}"
+                        BorderBrush="{TemplateBinding BorderBrush}"
+                        BorderThickness="{TemplateBinding BorderThickness}">-->
+                    <!--<TextBlock Margin="20" Foreground="White" HorizontalAlignment="Center" FontSize="20">×øºÍ·Å¿í</TextBlock>-->
+                    <Grid Width="{TemplateBinding CircularWidth}" Height="{TemplateBinding CircularWidth}">
+                        <!--µ×É«-->
+                        <Ellipse Name="BackgroundColor" Stroke="{TemplateBinding RingBackgroundColor}"  StrokeThickness="{TemplateBinding RingWidth}">
+                        </Ellipse>
+                        <!--Ìî³ä-->
+                        <Ellipse  Name="ForegroudColor" Stroke="{TemplateBinding RingForegroundColor}" StrokeThickness="{TemplateBinding RingWidth}" StrokeDashArray="{TemplateBinding RingLength}" RenderTransformOrigin="0.5,0.5">
+                            <Ellipse.RenderTransform>
+                                <RotateTransform Angle="-90"/>
+                            </Ellipse.RenderTransform>
+                        </Ellipse>
+                        <TextBlock Foreground="Black" FontSize="50" HorizontalAlignment="Center" VerticalAlignment="Center" Text="{TemplateBinding ProgressNumText}"></TextBlock>
+                    </Grid>
+                    <!--</Border>-->
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+</ResourceDictionary>

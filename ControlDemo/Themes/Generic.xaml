@@ -11,12 +11,12 @@
                         Background="{TemplateBinding Background}"
                         BorderBrush="{TemplateBinding BorderBrush}"
                         BorderThickness="{TemplateBinding BorderThickness}">-->
-                    <!--<TextBlock Margin="20" Foreground="White" HorizontalAlignment="Center" FontSize="20">坐和放宽</TextBlock>-->
                     <Grid Width="{TemplateBinding CircularWidth}" Height="{TemplateBinding CircularWidth}">
                         <!--底色-->
                         <Ellipse Name="BackgroundColor" Stroke="{TemplateBinding RingBackgroundColor}"  StrokeThickness="{TemplateBinding RingWidth}">
                         </Ellipse>
                         <!--填充-->
+                        <!--RenderTransformOrigin 设置旋转中心，0，0为左上，1，1为右下-->
                         <Ellipse  Name="ForegroudColor" Stroke="{TemplateBinding RingForegroundColor}" StrokeThickness="{TemplateBinding RingWidth}" StrokeDashArray="{TemplateBinding RingLength}" RenderTransformOrigin="0.5,0.5">
                             <Ellipse.RenderTransform>
                                 <RotateTransform Angle="-90"/>

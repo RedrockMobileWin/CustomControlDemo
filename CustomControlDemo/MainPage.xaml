@@ -11,7 +11,7 @@
 
     <Grid>
         <StackPanel HorizontalAlignment="Center" VerticalAlignment="Center">
-
+            <Line Stroke="Red" StrokeDashArray="255,3000" X2="300" StrokeThickness="2"/>
             <!--<TextBlock Margin="20" Foreground="White" HorizontalAlignment="Center" FontSize="20">坐和放宽</TextBlock>
         <Grid Width="200" Height="200">
             <Ellipse Stroke="Gray" Fill="Red" StrokeThickness="50">
@@ -29,8 +29,8 @@
             <!--<Line Stroke="SkyBlue" StrokeThickness="50" StrokeDashArray="2" X2="600"/>-->
             <!--</Border>-->
             <local:CustomControl1/>
-            <cd:CircularProgressBar CircularWidth="200" RingBackgroundColor="Gray" RingForegroundColor="SkyBlue" RingWidth="5"
-                                    ProgressNum="0.6"/>
+            <cd:CircularProgressBar CircularWidth="800" RingBackgroundColor="Gray" RingForegroundColor="SkyBlue" RingWidth="20"
+                                    ProgressNum="0.2"/>
         </StackPanel>
     </Grid>
 </Page>

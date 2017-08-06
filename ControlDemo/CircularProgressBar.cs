@@ -22,13 +22,13 @@ namespace ControlDemo
         {
             //让样式和逻辑代码联系起来
             this.DefaultStyleKey = typeof(CircularProgressBar);
-            _RingInitNum.Add(0);
-            _RingInitNum.Add(Width * 3);
+            //_RingInitNum.Add(0);
+            //_RingInitNum.Add(Width * 3);
         }
         public static readonly DependencyProperty ProgressNumProperty = DependencyProperty.Register("ProgressNum", typeof(double),
             typeof(CircularProgressBar), new PropertyMetadata(.0, OnProgressNumChanged));
         public static readonly DependencyProperty ProgressNumTextProperty = DependencyProperty.Register("ProgressNumText", typeof(string),
-            typeof(CircularProgressBar), new PropertyMetadata("0", OnProgressNumTextChanged));
+            typeof(CircularProgressBar), new PropertyMetadata("0"));
         public static readonly DependencyProperty CircularWidthProperty = DependencyProperty.Register("CircularWidth", typeof(double),
             typeof(CircularProgressBar), new PropertyMetadata(0,OnCircularWidthChanged));
 
@@ -87,8 +87,8 @@ namespace ControlDemo
             double cirLength = diameter * 3.14 * cpb.ProgressNum / cpb.RingWidth;
             DoubleCollection dc = new DoubleCollection();
             dc.Add(cirLength);
-            //填充间隔长度 远大于半径
-            dc.Add(cpb.Width * 3);
+            //填充间隔长度 远大于周长
+            dc.Add(cpb.Width * 3.14*3);
             cpb.RingLength = dc;
         }
 
@@ -96,10 +96,6 @@ namespace ControlDemo
         {
             CircularProgressBar cpb = d as CircularProgressBar;
             cpb.Width =cpb.Height = cpb.CircularWidth;
-        }
-
-        private static void OnProgressNumTextChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
-        {
         }
 
     }
